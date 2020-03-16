@@ -2,10 +2,12 @@
 
 ![](https://img.shields.io/badge/Status-under--dev-red.svg) ![](https://img.shields.io/badge/Python-3.7-green.svg)![License: MIT](https://img.shields.io/github/license/skoc/deep-learning-drug-response.svg)
 
-Deep learning methods are applied for feature selection and drug response prediction in public omics datasets.
+Deep Learning solutions for drug response prediction in public omics datasets.
 
 ## Description
-will be updated...
+Briefly, first feature selection with Autoencoder (for extracting feature subspace) or Lasso (for variable selection) then fully connected network is used as a predictive model to the extracted feature subspace by step one for final prediction of selected chemotherapy drugs.
+
+Details will be updated...
 
 ### Dataset
 
