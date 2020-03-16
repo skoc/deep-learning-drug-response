@@ -5,7 +5,7 @@
 Deep Learning solutions for drug response prediction in public omics datasets.
 
 ## Description
-Briefly, first feature selection with Autoencoder (for extracting feature subspace) or Lasso (for variable selection) then fully connected network is used as a predictive model to the extracted feature subspace by step one for final prediction of selected chemotherapy drugs.
+Briefly, first feature selection with Autoencoder (for extracting feature subspace) or Lasso (for variable selection) then fully connected network is used as a predictive model to the extracted feature subspace for final prediction of selected chemotherapy drugs.
 
 Details will be updated...
 
