@@ -89,7 +89,6 @@ def main():
 
     # Testing
     pred  = models['NN'].predict(models['Encoder'].predict(X_test))
-    print(pred)
     auc_score = roc_auc_score(y_test.response, np.squeeze(pred))
     print(f"\n--\nAUC Score: {auc_score:.3f}\n--\n")
 
