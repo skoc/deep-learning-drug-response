@@ -1,32 +1,14 @@
 from keras.layers import (
     Input,
-    Conv2D,
     Dense,
-    Flatten,
-    Conv2DTranspose,
     Dropout,
-    ReLU,
-    Activation,
-    Lambda,
-    BatchNormalization,
-    Reshape
+    BatchNormalization
 )
-from keras.models import Sequential
 from sklearn.model_selection import StratifiedKFold
-from keras import backend as K
-from keras.optimizers import Adadelta, Adam
-from keras.callbacks import ModelCheckpoint
+from keras.optimizers import Adam
 from keras.utils import plot_model
 from keras.models import Model
-
-
-import numpy as np
 import os
-import pickle
-import json
-
-# from utils.callbacks import CustomCallback, step_decay_schedule
-
 
 class Autoencoder:
     def __init__(
@@ -103,8 +85,6 @@ class Autoencoder:
         self.learning_rate = learning_rate
 
         optimizer = Adam(learning_rate=learning_rate, decay=learning_decay)
-        # def r_loss(y_true, y_pred):
-        #     return K.mean(K.square(y_true - y_pred), axis = [1,2,3])
 
         self.model_autoencoder.compile(optimizer=optimizer, loss='binary_crossentropy')
 

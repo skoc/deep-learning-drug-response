@@ -1,14 +1,9 @@
 from keras.layers import Input, Dense, Dropout, Activation, BatchNormalization
-from keras.models import Sequential
-from keras import backend as K
-from keras.optimizers import Adagrad, Adam
-from keras.callbacks import ModelCheckpoint
-from sklearn.model_selection import StratifiedKFold, cross_val_score
+from keras.optimizers import Adam
+from sklearn.model_selection import StratifiedKFold
 from keras.utils import plot_model
 from keras.models import Model
-import numpy as np
 import os
-
 
 class Neural_Network:
     def __init__(
@@ -30,10 +25,6 @@ class Neural_Network:
         self.build_model()
 
     def build_model(self):
-        """
-
-        :return:
-        """
         input_fc = Input(shape=(self.feature_dim,), name="FC_input")
         fc_layer = input_fc
 
@@ -57,11 +48,6 @@ class Neural_Network:
         self.model_fc = Model(input_model, output_model)
 
     def compile(self, learning_rate=0.001, learning_decay=0.0001):
-        """
-
-        :param learning_rate:
-        :return:
-        """
         self.learning_rate = learning_rate
 
         optimizer = Adam(learning_rate=learning_rate, decay=learning_decay)
@@ -77,24 +63,9 @@ class Neural_Network:
         batch_size=64,
         epochs=10,
         n_splits=3,
-        run_folder="",
         seed=42,
         verbose=0,
     ):
-        """
-
-        :param x_train:
-        :param batch_size:
-        :param epochs:
-        :param run_folder:
-        :return:
-        """
-        # save the model after every epoch
-        # checkpoint_weight = ModelCheckpoint(
-        #     os.path.join(run_folder, "weights.h5"), save_weights_only=True, verbose=1
-        # )
-        #
-        # callbacks_list = [checkpoint_weight]  # , custom_callback, lr_sched]
         skf = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=seed)
 
         for train_idx, test_idx in skf.split(x_train, y_train.response):
