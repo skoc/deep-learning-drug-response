@@ -1,0 +1,27 @@
+hyperparameters_ae:
+  learning_rate: 0.01
+  learning_decay: 0.001
+  hidden_sizes: [1024]
+  drop_rate: 0.5
+  feature_dim: 64
+  use_batch_norm: True
+  use_dropout: True
+hyperparameters_nn:
+  learning_rate: 0.001
+  learning_decay: 0.0001
+  feature_dim: 64
+  num_classes: 1
+  hidden_sizes: []
+  use_batch_norm: True
+  use_dropout: True
+training:
+  drug_type: 'Cetuximab'
+  load_ae: True
+  load_nn: False
+  batch_size_ae: 64
+  batch_size_nn: 64
+  num_epochs_ae: 10
+  num_epochs_nn: 50
+  n_folds: 5
+  test_size: 0.25
+  omics: ['gene expression']
