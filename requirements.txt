@@ -12,7 +12,7 @@ Keras-Preprocessing==1.1.0
 Mako==1.1.0
 Markdown==3.2.1
 MarkupSafe==1.1.1
-numpy==1.18.1
+numpy==1.22.0
 opt-einsum==0+untagged.53.g6ab433b.dirty
 pandas==1.0.2
 protobuf==3.11.3
