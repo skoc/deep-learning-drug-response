@@ -15,7 +15,7 @@ MarkupSafe==1.1.1
 numpy==1.18.1
 opt-einsum==0+untagged.53.g6ab433b.dirty
 pandas==1.0.2
-protobuf==3.11.3
+protobuf==3.18.3
 pydot==1.4.1
 pygpu==0.7.6
 pyparsing==2.4.6
